@@ -55,3 +55,13 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 当用户从Paused状态恢复activity时，系统会调用onResume\(\)方法。系统每次调用这个方法时，activity都处于前台，包括第一次创建的时候。所以，应该实现onResume\(\)来初始化那些在onPause方法里面释放掉的组件，并执行那些activity每次进入Resumed state都需要的初始化动作。
 
+### 停止与重启
+
+在下面一些关键的场景中会涉及到停止与重启：
+
+* 用户打开最近使用app的菜单并从我们的app切换到另外一个app，这个时候我们的app是被停止的。如果用户通过手机主界面的启动程序图标或者最近使用程序的窗口回到我们的app，那么我们的activity会重启。
+* 用户在我们的app里面执行启动一个新activity的操作，当前activity会在第二个activity被创建后stop。如果用户点击back按钮，第一个activtiy会被重启。
+* 用户在使用我们的app时接收到一个来电通话。
+
+
+
