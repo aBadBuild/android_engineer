@@ -87,5 +87,23 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 > 通常来说，跳转到其他的activity或者是点击Home都会导致当前的activity执行onSaveInstanceState，因为这种情况下的activity都是有可能会被destory并且是需要保存状态以便后续恢复使用的，而从跳转的activity点击back回到前一个activity，那么跳转前的activity是执行退栈的操作，所以这种情况下是不会执行onSaveInstanceState的，因为这个activity不可能存在需要重建的操作。
 
+当我们的activity开始Stop，系统会调用 onSaveInstanceState\(\) ，Activity可以用键值对的集合来保存状态信息。这个方法会默认保存Activity视图的状态信息，如在 EditText 组件中的文本或 ListView 的滑动位置。为了给Activity保存额外的状态信息，你必须实现onSaveInstanceState\(\) 并增加key-value pairs到 Bundle 对象中，例如：
+
+```java
+static final String STATE_SCORE = "playerScore";
+static final String STATE_LEVEL = "playerLevel";
+...
+
+@Override
+public void onSaveInstanceState(Bundle savedInstanceState) {
+    // Save the user's current game state
+    savedInstanceState.putInt(STATE_SCORE, mCurrentScore);
+    savedInstanceState.putInt(STATE_LEVEL, mCurrentLevel);
+
+    // Always call the superclass so it can save the view hierarchy state
+    super.onSaveInstanceState(savedInstanceState);
+}
+```
+
 
 
