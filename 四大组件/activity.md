@@ -23,5 +23,5 @@
 </activity>
 ```
 
-
+我们必须实现onCreate\(\)方法来执行程序启动所需要的基本逻辑，一旦onCreate 操作完成，系统会迅速调用onStart\(\) 与onResume\(\)方法。我们的activity不会在Created或者Started状态停留。
 
