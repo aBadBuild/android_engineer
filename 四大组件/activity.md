@@ -6,7 +6,7 @@
 
 ![](/assets/Activity1.png)
 
-三种静态状态：
+三种静态状态，Activity只能在三种状态之一下存在很长时间：
 
 * **Resumed**：在这种状态下，Activity处于前台，且用户可以与其交互。（有时也称为“运行”状态。）
 * **Paused**：在这种状态下，Activity被在前台中处于半透明状态或者未覆盖整个屏幕的另一个Activity—部分阻挡。暂停的Activity不会接收用户输入并且无法执行任何代码。
