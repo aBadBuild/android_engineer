@@ -75,3 +75,7 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 当系统Destory我们的activity，它会为activity调用onDestroy\(\)方法。因为我们会在onStop方法里面做释放资源的操作，那么onDestory方法则是我们最后去清除那些可能导致内存泄漏的地方。
 
+### 重新创建
+
+
+
