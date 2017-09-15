@@ -79,3 +79,7 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 然而，如果因为系统资源紧张而导致Activity的Destory， 系统会在用户回到这个Activity时有这个Activity存在过的记录，系统会使用那些保存的记录数据（描述了当Activity被Destory时的状态）来重新创建一个新的Activity实例。那些被系统用来恢复之前状态而保存的数据被叫做 "instance state" ，它是一些存放在Bundle对象中的key-value pairs。\(请注意这里的描述，这对理解onSaveInstanceState执行的时刻很重要\)。
 
+> 你的Activity会在每次旋转屏幕时被destroyed与recreated。当屏幕改变方向时，系统会Destory与Recreate前台的activity，因为屏幕配置被改变，你的Activity可能需要加载另一些替代的资源\(例如layout\)。
+
+
+
