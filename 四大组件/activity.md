@@ -33,5 +33,9 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 > 大多数 app并不需要实现这个方法，因为局部类的references会随着activity的销毁而销毁，并且我们的activity应该在onPause\(\)与onStop\(\)中执行清除activity资源的操作。然而，如果activity含有在onCreate调用时创建的后台线程，或者是其他有可能导致内存泄漏的资源，则应该在OnDestroy\(\)时进行资源清理，杀死后台线程。
 
+### 暂停与恢复
+
+
+
 
 
