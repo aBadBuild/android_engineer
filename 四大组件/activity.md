@@ -71,5 +71,7 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 即使系统会在activity stop时停止这个activity，它仍然会保存View对象的状态\(比如EditText中的文字\) 到一个Bundle中，并且在用户返回这个activity时恢复它们。
 
-我们在onStop里面做了哪些清除的操作，就该在onStart里面重新把那些清除掉的资源重新创建出来。
+> 我们在onStop里面做了哪些清除的操作，就该在onStart里面重新把那些清除掉的资源重新创建出来。
+
+当系统Destory我们的activity，它会为activity调用onDestroy\(\)方法。因为我们会在onStop方法里面做释放资源的操作，那么onDestory方法则是我们最后去清除那些可能导致内存泄漏的地方。
 
