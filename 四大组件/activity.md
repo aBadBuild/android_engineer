@@ -126,7 +126,20 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-> 我们也可以选择实现 onRestoreInstanceState\(\) ，而不是在onCreate方法里面恢复数据。 onRestoreInstanceState\(\)方法会在 onStart\(\) 方法之后执行. 系统仅仅会在存在需要恢复的状态信息时才会调用 onRestoreInstanceState\(\) ，因此不需要检查 Bundle 是否为null。
-
 我们也可以选择实现 onRestoreInstanceState\(\) ，而不是在onCreate方法里面恢复数据。 onRestoreInstanceState\(\)方法会在 onStart\(\) 方法之后执行. 系统仅仅会在存在需要恢复的状态信息时才会调用 onRestoreInstanceState\(\) ，因此不需要检查 Bundle 是否为null。
+
+```java
+public void onRestoreInstanceState(Bundle savedInstanceState) {
+    // Always call the superclass so it can restore the view hierarchy
+    super.onRestoreInstanceState(savedInstanceState);
+
+    // Restore state members from saved instance
+    mCurrentScore = savedInstanceState.getInt(STATE_SCORE);
+    mCurrentLevel = savedInstanceState.getInt(STATE_LEVEL);
+}
+```
+
+> 与上面保存一样，总是需要调用onRestoreInstanceState\(\)方法的父类实现，这样默认的父类实现才能保存视图状态的信息。
+
+
 
