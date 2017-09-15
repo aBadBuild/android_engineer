@@ -46,7 +46,6 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 > 当一个半透明的activity阻塞activity时，系统会调用onPause\(\)方法并且这个activity会停留在Paused 状态\(1\). 如果用户在这个activity还是在Paused 状态时回到这个activity，系统则会调用它的onResume\(\) \(2\)。
 
 当系统调用activity中的onPause\(\)，从技术上讲，意味着activity仍然处于部分可见的状态.但更多时候意味着用户正在离开这个activity，并马上会进入Stopped state. 通常应该在onPause\(\)回调方法里面做以下事情:
-
 * 停止动画或者是其他正在运行的操作，那些都会导致CPU的浪费.
 * 提交在用户离开时期待保存的内容\(例如邮件草稿\).
 * 释放系统资源，例如broadcast receivers, sensors \(比如GPS\), 或者是其他任何会影响到电量的资源。
