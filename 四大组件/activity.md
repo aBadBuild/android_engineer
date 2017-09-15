@@ -102,6 +102,7 @@ public void onSaveInstanceState(Bundle savedInstanceState) {
 
     // Always call the superclass so it can save the view hierarchy state
     super.onSaveInstanceState(savedInstanceState);
+    //必须要调用 onSaveInstanceState() 方法的父类实现，这样默认的父类实现才能保存视图状态的信息。
 }
 ```
 
