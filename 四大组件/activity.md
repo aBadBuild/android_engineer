@@ -81,5 +81,5 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 > 你的Activity会在每次旋转屏幕时被destroyed与recreated。当屏幕改变方向时，系统会Destory与Recreate前台的activity，因为屏幕配置被改变，你的Activity可能需要加载另一些替代的资源\(例如layout\)。
 
-
+你
 
