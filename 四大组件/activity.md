@@ -14,7 +14,7 @@
 
 我们可以在_AndroidManifest.xml_中定义作为主activity的activity：
 
-```java
+```xml
 <activity android:name=".MainActivity" android:label="@string/app_name">
     <intent-filter>
         <action android:name="android.intent.action.MAIN" />
