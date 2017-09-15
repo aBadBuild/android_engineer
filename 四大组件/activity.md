@@ -81,5 +81,9 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 > 你的Activity会在每次旋转屏幕时被destroyed与recreated。当屏幕改变方向时，系统会Destory与Recreate前台的activity，因为屏幕配置被改变，你的Activity可能需要加载另一些替代的资源\(例如layout\)。
 
-你
+为了可以保存额外更多的数据到saved instance state。在Activity的生命周期里面存在一个额外的回调函数，你必须重写这个函数。该回调函数并没有在前面课程的图片示例中显示。这个方法是onSaveInstanceState\(\)，当用户离开Activity时，系统会调用它。当系统调用这个函数时，系统会在Activity被异常Destory时传递 Bundle 对象，这样我们就可以增加额外的信息到Bundle中并保存到系统中。若系统在Activity被Destory之后想重新创建这个Activity实例时，之前的Bundle对象会\(系统\)被传递到你我们activity的onRestoreInstanceState\(\)方法与 onCreate\(\) 方法中。
+
+![](/assets/activity5.png)
+
+
 
