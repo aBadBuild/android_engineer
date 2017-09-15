@@ -63,5 +63,9 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 * 用户在我们的app里面执行启动一个新activity的操作，当前activity会在第二个activity被创建后stop。如果用户点击back按钮，第一个activtiy会被重启。
 * 用户在使用我们的app时接收到一个来电通话。
 
+> 因为系统在activity停止时会在内存中保存Activity的实例，所以有时不需要实现onStop\(\),onRestart\(\)甚至是onStart\(\)方法. 因为大多数的activity相对比较简单，activity会自己停止与重启，我们只需要使用onPause\(\)来停止正在运行的动作并断开系统资源链接。
+
+![](/assets/Activity4.png)
+
 
 
