@@ -67,5 +67,7 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 ![](/assets/Activity4.png)
 
+> 当activity调用onStop\(\)方法, activity不再可见，并且应该释放那些不再需要的所有资源。一旦activity停止了，系统会在需要内存空间时摧毁它的实例\(和栈结构有关，通常back操作会导致前一个activity被销毁\)。极端情况下，系统会直接杀死我们的app进程，并不执行activity的onDestroy\(\)回调方法, 因此我们需要使用onStop\(\)来释放资源，从而避免内存泄漏。\(这点需要注意\)
 
+即使系统会在activity stop时停止这个activity，它仍然会保存View对象的状态\(比如EditText中的文字\) 到一个Bundle中，并且在用户返回这个activity时恢复它们。
 
