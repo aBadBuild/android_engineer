@@ -106,5 +106,24 @@ public void onSaveInstanceState(Bundle savedInstanceState) {
 }
 ```
 
+由于 onCreate\(\) 方法会在第一次创建新的Activity实例与重新创建之前被Destory的实例时都被调用，我们必须在尝试读取 Bundle 对象前检测它是否为null。如果它为null，系统则是创建一个新的Activity实例，而不是恢复之前被Destory的Activity。下面是一个示例，演示在onCreate方法里面恢复一些数据：
+
+```java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState); // Always call the superclass first
+
+    // Check whether we're recreating a previously destroyed instance
+    if (savedInstanceState != null) {
+        // Restore value of members from saved state
+        mCurrentScore = savedInstanceState.getInt(STATE_SCORE);
+        mCurrentLevel = savedInstanceState.getInt(STATE_LEVEL);
+    } else {
+        // Probably initialize members with default values for a new instance
+    }
+    ...
+}
+```
+
 
 
