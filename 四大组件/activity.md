@@ -29,3 +29,9 @@
 
 技术上来说, activity在onStart\(\)被调用后开始被用户可见，但onResume\(\)会迅速被执行使得activity停留在Resumed状态，直到一些因素发生变化才会改变这个状态。例如接收到一个来电，用户切换到另外一个activity，或者是设备屏幕关闭。
 
+activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回调是onDestroy\(\).当收到需要将该activity彻底移除的信号时，系统会调用这个方法。
+
+> 大多数 app并不需要实现这个方法，因为局部类的references会随着activity的销毁而销毁，并且我们的activity应该在onPause\(\)与onStop\(\)中执行清除activity资源的操作。然而，如果activity含有在onCreate调用时创建的后台线程，或者是其他有可能导致内存泄漏的资源，则应该在OnDestroy\(\)时进行资源清理，杀死后台线程。
+
+
+
