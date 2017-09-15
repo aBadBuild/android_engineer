@@ -35,5 +35,7 @@ activity的第一个生命周期回调函数是 onCreate\(\),它最后一个回�
 
 ### 暂停与恢复
 
+在正常使用app时，前端的activity有时会被其他可见的组件阻塞\(obstructed\)，从而导致当前的activity进入Pause状态。例如，当打开一个半透明的activity时\(例如以对话框的形式\)，之前的activity会被暂停。 只要之前的activity仍然被部分可见，这个activity就会一直处于Paused状态。然而，一旦之前的activity被完全阻塞并不可见时，则其会进入Stop状态。
 
-在正常使用app时，前端的activity有时会被其他可见的组件阻塞(obstructed)，从而导致当前的activity进入Pause状态。例如，当打开一个半透明的activity时(例如以对话框的形式)，之前的activity会被暂停。 只要之前的activity仍然被部分可见，这个activity就会一直处于Paused状态。
+当我们的activity收到调用onPause\(\)的信号时，那可能意味者activity将被暂停一段时间，并且用户很可能回到我们的activity。然而，那也是用户要离开我们的activtiy的第一个信号。
+
