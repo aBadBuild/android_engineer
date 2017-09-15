@@ -106,7 +106,8 @@ public void onSaveInstanceState(Bundle savedInstanceState) {
 }
 ```
 
-由于 onCreate\(\) 方法会在第一次创建新的Activity实例与重新创建之前被Destory的实例时都被调用，我们必须在尝试读取 Bundle 对象前检测它是否为null。如果它为null，系统则是创建一个新的Activity实例，而不是恢复之前被Destory的Activity。下面是一个示例，演示在onCreate方法里面恢复一些数据：
+由于 onCreate\(\) 方法会在第一次创建新的Activity实例与重新创建之前被Destory的实例时都被调用，我们必须在尝试读取 Bundle 对象前检测它是否为null。如果它为null，系统则是创建一个新的Activity实例，而不是恢复之前被Destory的Activity。  
+下面是一个示例，演示在onCreate方法里面恢复一些数据：
 
 ```java
 @Override
@@ -125,5 +126,7 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
+> 我们也可以选择实现 onRestoreInstanceState\(\) ，而不是在onCreate方法里面恢复数据。 onRestoreInstanceState\(\)方法会在 onStart\(\) 方法之后执行. 系统仅仅会在存在需要恢复的状态信息时才会调用 onRestoreInstanceState\(\) ，因此不需要检查 Bundle 是否为null。
 
+我们也可以选择实现 onRestoreInstanceState\(\) ，而不是在onCreate方法里面恢复数据。 onRestoreInstanceState\(\)方法会在 onStart\(\) 方法之后执行. 系统仅仅会在存在需要恢复的状态信息时才会调用 onRestoreInstanceState\(\) ，因此不需要检查 Bundle 是否为null。
 
