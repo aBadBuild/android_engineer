@@ -4,5 +4,5 @@
 
 ## 生命周期
 
-
+![](/assets/Activity1.png)
 
