@@ -61,5 +61,5 @@ Uri number = Uri.parse("tel:123456");
 Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
 ```
 
-
+通过执行startActivity\(\)启动这个intent时，Phone app会使用之前的电话号码来拨出这个电话。
 
