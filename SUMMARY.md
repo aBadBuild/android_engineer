@@ -5,7 +5,7 @@
   * [ListView](控件/ListView.md)
 * [四大组件](四大组件/README.md)
   * [Activity](四大组件/Activity/README.md)
-    * [生命周期](四大组件/Activity/activity1.md)
+    * [生命周期](四大组件/Activity/生命周期.md)
 * [Intent](Intent.md)
 
 
