@@ -241,6 +241,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ### 返回result
 
+参数的作用可以结合接收result的`onActivityResult()`函数去看。
+
 如果想返回一个result给启动的那个activity，仅仅需要执行`setResult()`，通过指定一个resultCode与result intent。操作完成之后，用户需要返回到原来的activity，通过执行`finish()` 关闭被唤起的activity：
 
 ```java
