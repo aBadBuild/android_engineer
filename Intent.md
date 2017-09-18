@@ -147,5 +147,9 @@ Intent chooser = Intent.createChooser(intent, title);
 startActivity(chooser);
 ```
 
+## 接受Activity返回的结果
+
+> 启动另外一个activity并不一定是单向的。我们也可以启动另外一个activity然后接受一个返回的result。为接受result，我们需要使用`startActivityForResult()` ，而不是`startActivity()`。
+
 
 
