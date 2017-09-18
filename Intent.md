@@ -260,5 +260,7 @@ setResult(RESULT_COLOR_RED);
 finish();
 ```
 
+> 我们没有必要在意自己的activity是被用`startActivity()`还是` startActivityForResult()`方法所叫起的。系统会自动去判断该如何传递result。在不需要的result的case下，result会被自动忽略。
+
 
 
