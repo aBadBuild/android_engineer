@@ -52,5 +52,14 @@ map=(HashMap)intent.getSerializableExtra(MyActivity.EXTRA_MESSAGE); //获取键�
 
 > 用于唤醒不同app来执行某个动作。
 
+intents并不声明要启动组件的具体类名，而是声明一个需要执行的action。
+
+指定电话号码的intent：
+
+```java
+Uri number = Uri.parse("tel:123456");
+Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+```
+
 
 
