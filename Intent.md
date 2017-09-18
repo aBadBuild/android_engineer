@@ -19,10 +19,25 @@ Intent intent = new Intent(this, 目标.class);
 * 第一个参数是Context\(之所以用this是因为当前Activity是Context的子类\)
 * 接受系统发送Intent的应用组件的Class（在这个案例中，指将要被启动的activity）。
 
+新Activity的启动：
+
+```java
+startActivity(intent);
+```
+
 Intent可以携带称作_extras_的键-值对数据类型。putExtra\(\)方法把键名作为第一个参数，把值作为第二个参数。
 
 ```java
 intent.putExtra(EXTRA_MESSAGE, message);
+```
+
+当然，为了应用程序与其他应用程序进行交互时仍可以确保键唯一，可以在原Activity中定义健常量：
+
+```java
+public class MyActivity extends ActionBarActivity {
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
+    // TODO
+}
 ```
 
 
