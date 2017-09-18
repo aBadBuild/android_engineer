@@ -251,7 +251,14 @@ finish();
 
 我们必须总是指定一个result code。通常不是`RESULT_OK`就是`RESULT_CANCELED`。我们可以通过Intent 来添加需要返回的数据。
 
-> 默认的result code是`RESULT_CANCELED`。因此，如果用户在没有完成操作之前点击了back key，那么之前的activity接受到的result code就是"canceled"。
+> 默认的result code是`RESULT_CANCELED`。因此，如果用户在没有完成操作之前点击了back key，那么之前的activity接受到的result code就是"**canceled**"。
+
+如果只是纯粹想要返回一个int来表示某些返回的result数据之一，则可以设置result code为任何大于0的数值。如果我们返回的result只是一个int，那么连intent都可以不需要返回了，可以调用setResult\(\)然后只传递result code如下：
+
+```java
+setResult(RESULT_COLOR_RED);
+finish();
+```
 
 
 
