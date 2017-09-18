@@ -241,7 +241,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ### 返回result
 
-如果想返回一个result给启动的那个activity，仅仅需要执行`setResult()`，通过指定一个result code与result intent。操作完成之后，用户需要返回到原来的activity，通过执行`finish()` 关闭被唤起的activity：
+如果想返回一个result给启动的那个activity，仅仅需要执行`setResult()`，通过指定一个resultCode与result intent。操作完成之后，用户需要返回到原来的activity，通过执行`finish()` 关闭被唤起的activity：
 
 ```java
 Intent result = new Intent("com.example.RESULT_ACTION", Uri.parse("content://result_uri");
@@ -249,7 +249,7 @@ setResult(Activity.RESULT_OK, result);
 finish();
 ```
 
-我们必须总是指定一个result code。通常不是`RESULT_OK`就是`RESULT_CANCELED`。我们可以通过Intent 来添加需要返回的数据。
+我们必须总是指定一个resultCode。通常不是`RESULT_OK`就是`RESULT_CANCELED`。我们可以通过Intent 来添加需要返回的数据。
 
 > 默认的result code是`RESULT_CANCELED`。因此，如果用户在没有完成操作之前点击了back key，那么之前的activity接受到的result code就是"**canceled**"。
 
@@ -260,7 +260,7 @@ setResult(RESULT_COLOR_RED);
 finish();
 ```
 
-> 我们没有必要在意自己的activity是被用`startActivity()`还是` startActivityForResult()`方法所叫起的。系统会自动去判断该如何传递result。在不需要的result的case下，result会被自动忽略。
+> 我们没有必要在意自己的activity是被用`startActivity()`还是`startActivityForResult()`方法所叫起的。系统会自动去判断该如何传递result。在不需要的result的case下，result会被自动忽略。
 
 
 
