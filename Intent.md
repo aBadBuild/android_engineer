@@ -214,28 +214,27 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 </activity>
 ```
 
-每一个发送出来的intent只会包含一个action与data类型，但handle这个intent的activity的 `<intent-filter>`可以声明多个`<action>`,，`<category>`与`<data> `。
+每一个发送出来的intent只会包含一个action与data类型，但handle这个intent的activity的 `<intent-filter>`可以声明多个`<action>`,，`<category>`与`<data>`。
 
 如果任何的两对action与data是互相矛盾的，就应该创建不同的intent filter来指定特定的action与type。
 
 ### 在Activity中Handle发送过来的Intent {#activityhandleintent}
 
-可以执行`getIntent()`来获取启动我们activity的那个intent。我们可以在activity生命周期的任何时候去执行这个方法，**但最好是在`onCreate()`或者`onStart()`里面去执行**：
+可以执行`getIntent()`来获取启动我们activity的那个intent。我们可以在activity生命周期的任何时候去执行这个方法，**但最好是在**`onCreate()`**或者**`onStart()`**里面去执行**：
 
 ```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
-    // Get the intent that started this activity
+    
     Intent intent = getIntent();
     Uri data = intent.getData();
 
-    // Figure out what to do based on the intent type
     if (intent.getType().indexOf("image/") != -1) {
-        // Handle intents with image data ...
+        // 图片数据的处理
     } else if (intent.getType().equals("text/plain")) {
-        // Handle intents with text ...
+        // 文本数的处理
     }
 }
 ```
