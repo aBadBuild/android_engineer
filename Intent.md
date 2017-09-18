@@ -166,5 +166,26 @@ private void pickContact() {
 }
 ```
 
+### 接收result
+
+当用户完成了启动之后activity操作之后，系统会调用我们activity中的`onActivityResult()` 回调方法。该方法有三个参数：
+
+* 通过`startActivityForResult()`传递的request code。
+* 第二个activity指定的result code。如果操作成功则是RESULT\_OK，如果用户没有操作成功，而是直接点击回退或者其他什么原因，那么则是`RESULT_CANCELED`。
+* 包含了所返回result数据的intent。
+
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    // Check which request we're responding to
+    if (requestCode == PICK_CONTACT_REQUEST) {
+        // Make sure the request was successful
+        if (resultCode == RESULT_OK) {
+            
+        }
+    }
+}
+```
+
 
 
