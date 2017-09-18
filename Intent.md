@@ -1,4 +1,4 @@
 # Intent
 
-
+一个Android app通常都会有多个activities。为了让用户能够从一个activity跳到另一个activity以及数据交互的时候，我们的app必须使用Intent来定义自己的意图。
 
