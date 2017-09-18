@@ -149,7 +149,9 @@ startActivity(chooser);
 
 ## 接受Activity返回的结果
 
-> 启动另外一个activity并不一定是单向的。我们也可以启动另外一个activity然后接受一个返回的result。为接受result，我们需要使用`startActivityForResult()` ，而不是`startActivity()`。
+启动另外一个activity并不一定是单向的。我们也可以启动另外一个activity然后接受一个返回的`result`。为接受`result`，我们需要使用`startActivityForResult()` ，而不是`startActivity()`。当然，被启动的activity需要指定返回的`result`。它需要把这个`result`作为另外一个`intent`对象返回，我们的activity需要在`onActivityResult()`的回调方法里面去接收`result`。
+
+
 
 
 
