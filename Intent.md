@@ -199,6 +199,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 * **Action:**一个想要执行的动作的名称。通常是系统已经定义好的值，如`ACTION_SEND`或`ACTION_VIEW`。 在intent filter中通过`<action>`指定它的值，值的类型必须为字符串，而不是API中的常量\(看下面的例子\)
 * **Data:**Intent附带数据的描述。在intent filter中通过`<data>`指定它的值，可以使用一个或者多个属性，我们可以只定义`MIME type`或者是只指定`URI prefix`，也可以只定义一个`URI scheme`，或者是他们综合使用。
+* **Category:**提供一个附加的方法来标识这个activity能够handle的intent。通常与用户的手势或者是启动位置有关。系统有支持几种不同的categories,但是大多数都很少用到。而且，所有的implicit intents都默认是`CATEGORY_DEFAULT`类型的。在intent filter中用`<category>`指定它的值。
 
 例如，这个有intent filter的activity，当数据类型为文本或图像时会处理ACTION\_SEND的intent：
 
