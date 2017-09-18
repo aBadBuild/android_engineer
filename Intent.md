@@ -77,5 +77,16 @@ Uri webpage = Uri.parse("http://www.android.com");
 Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
 ```
 
+发送带附件的email：
+
+```java
+Intent emailIntent = new Intent(Intent.ACTION_SEND);
+emailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
+emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"jon@example.com"}); // recipients
+emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Email subject");
+emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message text");
+emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("content://path/to/email/attachment"));
+```
+
 
 
