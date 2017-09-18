@@ -249,5 +249,9 @@ setResult(Activity.RESULT_OK, result);
 finish();
 ```
 
+我们必须总是指定一个result code。通常不是`RESULT_OK`就是`RESULT_CANCELED`。我们可以通过Intent 来添加需要返回的数据。
+
+> 默认的result code是`RESULT_CANCELED`。因此，如果用户在没有完成操作之前点击了back key，那么之前的activity接受到的result code就是"canceled"。
+
 
 
