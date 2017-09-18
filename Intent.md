@@ -153,7 +153,7 @@ startActivity(chooser);
 
 ### 启动Activity
 
-对于`startActivityForResult()`方法中的intent与之前介绍的并无太大差异，不过是需要在这个方法里面多添加一个int类型的参数。该integer参数称为"request code"，用于**标识请求**。当我们接收到result Intent时，可从回调方法里面的参数去判断这个result是否是我们想要的。
+对于`startActivityForResult()`方法中的intent与之前介绍的并无太大差异，不过是需要在这个方法里面多添加一个int类型的参数。该integer参数称为"**request code**"，用于**标识请求**。当我们接收到result Intent时，可从回调方法里面的参数去判断这个result是否是我们想要的。
 
 启动Activity来选择联系人：
 
