@@ -114,3 +114,23 @@ boolean isIntentSafe = activities.size() > 0;
 
 如果`isIntentSafe`为`true`, 那么至少有一个app可以响应这个intent。`false`则说明没有app可以handle这个intent。
 
+正确的启动方式：
+
+```java
+// 新建intent
+Uri location = Uri.parse("geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California");
+Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+
+// 验证是否有app接收
+PackageManager packageManager = getPackageManager();
+List<ResolveInfo> activities = packageManager.queryIntentActivities(mapIntent, 0);
+boolean isIntentSafe = activities.size() > 0;
+
+// 启动
+if (isIntentSafe) {
+    startActivity(mapIntent);
+}
+```
+
+
+
