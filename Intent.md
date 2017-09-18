@@ -100,5 +100,17 @@ calendarIntent.putExtra(Events.TITLE, "Ninja class");
 calendarIntent.putExtra(Events.EVENT_LOCATION, "Secret dojo");
 ```
 
+### 验证是否有App去接收这个Intent {#appintent}
 
+> 尽管Android系统会确保每一个确定的intent会被系统内置的app\(such as the Phone, Email, or Calendar app\)之一接收，但是我们还是应该在触发一个intent之前做验证是否有App接受这个intent的步骤。
+
+为了验证是否有合适的activity会响应这个intent，需要执行`queryIntentActivities()`来获取到能够接收这个intent的所有activity的list。若返回的List非空，那么我们才可以安全的使用这个intent。例如：
+
+```java
+PackageManager packageManager = getPackageManager();
+List<ResolveInfo> activities = packageManager.queryIntentActivities(intent, 0);
+boolean isIntentSafe = activities.size() > 0;
+```
+
+如果`isIntentSafe`为`true`, 那么至少有一个app可以响应这个intent。`false`则说明没有app可以handle这个intent。
 
