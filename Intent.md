@@ -132,5 +132,22 @@ if (isIntentSafe) {
 }
 ```
 
+### 显示app的选择界面
+
+> 请注意，当以`startActivity()`的形式传递一个intent，并且有多个app可以handle时，用户可以在弹出dialog的时候选择默认启动的app。该功能对于用户有特殊偏好的时候非常有用（例如用户总是喜欢启动某个app来查看网页，总是喜欢启动某个camera来拍照）。
+
+为了显示chooser, 需要使用`createChooser()`来创建Intent：
+
+```java
+Intent intent = new Intent(Intent.ACTION_SEND);
+...
+
+// Always use string resources for UI text. This says something like "Share this photo with"
+String title = getResources().getText(R.string.chooser_title);
+// Create and start the chooser
+Intent chooser = Intent.createChooser(intent, title);
+startActivity(chooser);
+```
+
 
 
