@@ -4,7 +4,7 @@
 
 ## Intent的发送
 
-### 建立显性Intent
+### 建立显性（explicit）Intent
 
 > 用于同一个app的两个Acticity之间的切换。
 
@@ -48,7 +48,7 @@ String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE); //可以通过
 map=(HashMap)intent.getSerializableExtra(MyActivity.EXTRA_MESSAGE); //获取键值对
 ```
 
-### 建立隐性Intent
+### 建立隐性（implicit）Intent
 
 > 用于唤醒不同app来执行某个动作。
 
@@ -62,4 +62,20 @@ Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
 ```
 
 通过执行`startActivity()`启动这个intent时，Phone app会使用之前的电话号码来拨出这个电话。
+
+查看地图：
+
+```java
+Uri location = Uri.parse("geo:0,0?q=1600+Amphitheatre+Parkway,+Mountain+View,+California");
+Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
+```
+
+查看网页：
+
+```java
+Uri webpage = Uri.parse("http://www.android.com");
+Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
+```
+
+
 
