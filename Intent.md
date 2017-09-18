@@ -140,9 +140,7 @@ if (isIntentSafe) {
 
 ```java
 Intent intent = new Intent(Intent.ACTION_SEND);
-...
-
-// Always use string resources for UI text. This says something like "Share this photo with"
+// TODO
 String title = getResources().getText(R.string.chooser_title);
 // Create and start the chooser
 Intent chooser = Intent.createChooser(intent, title);
