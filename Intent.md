@@ -6,7 +6,7 @@
 
 ### 建立显性Intent
 
-用于同一个app的两个Acticity之间的切换。
+> 用于同一个app的两个Acticity之间的切换。
 
 创建一个Intent去启动目标Activity：
 
@@ -47,6 +47,10 @@ Intent intent = getIntent(); //得到intent并赋值给本地变量
 String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE); //可以通过原Activity里的常量来获取键值
 map=(HashMap)intent.getSerializableExtra(MyActivity.EXTRA_MESSAGE); //获取键值对
 ```
+
+### 建立隐性Intent
+
+> 用于唤醒不同app来执行某个动作。
 
 
 
