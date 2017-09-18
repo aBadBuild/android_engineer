@@ -227,7 +227,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
-    
+
     Intent intent = getIntent();
     Uri data = intent.getData();
 
@@ -237,6 +237,16 @@ protected void onCreate(Bundle savedInstanceState) {
         // 文本数的处理
     }
 }
+```
+
+### 返回result
+
+如果想返回一个result给启动的那个activity，仅仅需要执行`setResult()`，通过指定一个result code与result intent。操作完成之后，用户需要返回到原来的activity，通过执行`finish()` 关闭被唤起的activity：
+
+```java
+Intent result = new Intent("com.example.RESULT_ACTION", Uri.parse("content://result_uri");
+setResult(Activity.RESULT_OK, result);
+finish();
 ```
 
 
