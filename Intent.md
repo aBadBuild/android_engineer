@@ -188,8 +188,30 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ## Intent过滤
 
 > 但如果我们的app的功能对别的app也有用，那么其应该做好响应的准备。例如，如果创建了一个social app，它可以分享messages 或者 photos 给好友，那么最好我们的app能够接收`ACTION_SEND` 的intent,这样当用户在其他app触发分享功能的时候，我们的app能够出现在待选对话框。
-
+>
 > 通过在manifest文件中的`<activity>`标签下添加`<intent-filter>`的属性，使其他的app能够启动我们的activity。当app被安装到设备上时，系统可以识别intent filter并把这些信息记录下来。当其他app使用implicit intent执行`startActivity()`或者 `startActivityForResult()`时，系统会自动查找出那些可以响应该intent的activity。
+
+### 添加Intent Filter
+
+为了尽可能确切的定义activity能够handle的intent，每一个intent filter都应该尽可能详尽的定义好action与data。
+
+若activity中的intent filter满足以下intent对象的标准，系统就能够把特定的intent发送给activity：
+
+* **Action:**一个想要执行的动作的名称。通常是系统已经定义好的值，如`ACTION_SEND`或`ACTION_VIEW`。 在intent filter中通过`<action>`指定它的值，值的类型必须为字符串，而不是API中的常量\(看下面的例子\)
+* **Data:**Intent附带数据的描述。在intent filter中通过`<data>`指定它的值，可以使用一个或者多个属性，我们可以只定义`MIME type`或者是只指定`URI prefix`，也可以只定义一个`URI scheme`，或者是他们综合使用。
+
+例如，这个有intent filter的activity，当数据类型为文本或图像时会处理ACTION\_SEND的intent：
+
+```xml
+<activity android:name="ShareActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.SEND"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:mimeType="text/plain"/>
+        <data android:mimeType="image/*"/>
+    </intent-filter>
+</activity>
+```
 
 
 
