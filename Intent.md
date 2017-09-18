@@ -142,7 +142,7 @@ if (isIntentSafe) {
 Intent intent = new Intent(Intent.ACTION_SEND);
 // TODO
 String title = getResources().getText(R.string.chooser_title); // 指定标题
-// Create and start the chooser
+// 添加以及启动chooser
 Intent chooser = Intent.createChooser(intent, title);
 startActivity(chooser);
 ```
