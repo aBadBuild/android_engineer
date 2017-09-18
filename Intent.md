@@ -40,5 +40,13 @@ public class MyActivity extends ActionBarActivity {
 }
 ```
 
+而在新的Activity接受Intent的时候，可以如下进行获取数据：
+
+```java
+Intent intent = getIntent(); //得到intent并赋值给本地变量
+String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE); //可以通过原Activity里的常量来获取键值
+map=(HashMap)intent.getSerializableExtra(MyActivity.EXTRA_MESSAGE); //获取键值对
+```
+
 
 
