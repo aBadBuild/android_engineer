@@ -177,11 +177,9 @@ private void pickContact() {
 ```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    // Check which request we're responding to
-    if (requestCode == PICK_CONTACT_REQUEST) {
-        // Make sure the request was successful
-        if (resultCode == RESULT_OK) {
-            
+    if (requestCode == PICK_CONTACT_REQUEST) {// 判断回调的标识
+        if (resultCode == RESULT_OK) {// 判断是否成功
+            // TODO
         }
     }
 }
